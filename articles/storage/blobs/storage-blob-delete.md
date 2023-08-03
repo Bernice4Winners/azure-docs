@@ -7,11 +7,10 @@ author: pauljewellmsft
 
 ms.author: pauljewell
 ms.date: 05/11/2023
-ms.service: storage
-ms.subservice: blobs
+ms.service: azure-storage
 ms.topic: how-to
 ms.devlang: csharp
-ms.custom: devx-track-csharp, devguide-csharp
+ms.custom: devx-track-csharp, devguide-csharp, devx-track-dotnet
 ---
 
 # Delete and restore a blob with .NET

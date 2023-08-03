@@ -8,7 +8,7 @@ ms.topic: conceptual
 ms.date: 04/09/2020
 ms.author: sidandrews
 ms.reviewer: jucocchi
-ms.custom: devx-track-js, ignite-2022
+ms.custom: ignite-2022
 ---
 
 # User-defined functions (UDFs) in Azure Cosmos DB
@@ -24,7 +24,7 @@ Using UDFs, you can extend Azure Cosmos DB's query language. UDFs are a great wa
 
 However, we recommending avoiding UDFs when:
 
-- An equivalent [system function](system-functions.md) already exists in Azure Cosmos DB. System functions will always use fewer RU's than the equivalent UDF.
+- An equivalent [system function](system-functions.yml) already exists in Azure Cosmos DB. System functions will always use fewer RU's than the equivalent UDF.
 - The UDF is the only filter in the `WHERE` clause of your query. UDF's do not utilize the index so evaluating the UDF will require loading documents. Combining additional filter predicates that use the index, in combination with a UDF, in the `WHERE` clause will reduce the number of documents processed by the UDF.
 
 If you must use the same UDF multiple times in a query, you should reference the UDF in a [subquery](subquery.md#evaluate-once-and-reference-many-times), allowing you to use a JOIN expression to evaluate the UDF once but reference it many times.
@@ -36,18 +36,18 @@ If you must use the same UDF multiple times in a query, you should reference the
 
 The following example registers a UDF under an item container in the Azure Cosmos DB database. The example creates a UDF whose name is `REGEX_MATCH`. It accepts two JSON string values, `input` and `pattern`, and checks if the first matches the pattern specified in the second using JavaScript's `string.match()` function.
 
-```javascript
-       UserDefinedFunction regexMatchUdf = new UserDefinedFunction
-       {
-           Id = "REGEX_MATCH",
-           Body = @"function (input, pattern) {
-                      return input.match(pattern) !== null;
-                   };",
-       };
+```csharp
+var regexMatchUdf = new UserDefinedFunctionProperties
+{
+  Id = "REGEX_MATCH",
+  Body = @"function (input, pattern) {
+    return input.match(pattern) !== null;
+  };",
+};
 
-       UserDefinedFunction createdUdf = client.CreateUserDefinedFunctionAsync(
-           UriFactory.CreateDocumentCollectionUri("myDatabase", "families"),
-           regexMatchUdf).Result;  
+var response = await container.Scripts.CreateUserDefinedFunctionAsync(regexMatchUdf);
+
+Console.WriteLine($"Created UDF [{response.Resource?.Id}]");
 ```
 
 Now, use this UDF in a query projection. You must qualify UDFs with the case-sensitive prefix `udf.` when calling them from within queries.
@@ -142,5 +142,4 @@ As the preceding examples show, UDFs integrate the power of JavaScript language 
 ## Next steps
 
 - [Introduction to Azure Cosmos DB](../../introduction.md)
-- [System functions](system-functions.md)
-- [Aggregates](aggregate-functions.md)
+- [System functions](system-functions.yml)
