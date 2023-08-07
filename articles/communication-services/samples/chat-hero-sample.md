@@ -6,8 +6,8 @@ author: RinaRish
 manager: chpalm
 services: azure-communication-services
 
-ms.author: ektrishi
-ms.date: 06/30/2021
+ms.author: bernice4winners
+ms.date: 08/07/2023
 ms.topic: overview
 ms.service: azure-communication-services
 ms.subservice: chat
@@ -86,7 +86,7 @@ npm run setup
 npm run build
 npm run package
 ```
-2. Use the Azure extension and deploy the Chat/dist directory to your app service
+2. Use the Azure extension and deploy the Chat/Dist directory to your App Service. You can find more information on how to deploy the Chat/Dist directory [here](https://learn.microsoft.com/en-us/azure/app-service/quickstart-nodejs?tabs=windows&pivots=development-environment-vscode).
 
 ## Clean up resources
 
