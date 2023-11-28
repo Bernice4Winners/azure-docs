@@ -19,6 +19,9 @@ Get started with the Azure Communication Services Advanced Messaging, which exte
 
 -   Receive inquiries from your customers for product feedback or support, price quotes, and reschedule appointments.
 -   Send your customer's notifications like appointment reminders, product discounts, transaction receipts, and one-time passcodes.
+## Overview
+This document provides information about registering a WhatsApp Business Account with Azure Communication Services. This video demonstrates the process.
+![Register a WWhatsApp Business Account with Azure Communication Services](https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=04c63978-6f27-4289-93d6-625d8569ee28)
 
 ## Prerequisites
 
