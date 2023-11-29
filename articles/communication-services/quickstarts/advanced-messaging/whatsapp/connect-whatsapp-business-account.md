@@ -23,6 +23,7 @@ Get started with the Azure Communication Services Advanced Messaging, which exte
 ## Overview
 
 This document provides information about registering a WhatsApp Business Account with Azure Communication Services. This [video](https://learn.microsoft.com/_themes/docs.theme/master/en-us/_themes/global/video-embed.html?id=04c63978-6f27-4289-93d6-625d8569ee28) demonstrates the process. 
+[!VIDEO 04c63978-6f27-4289-93d6-625d8569ee28]
 
 ## Prerequisites
 
